@@ -2,7 +2,7 @@
 Python script to check avamar for failures within X minutes. Output is in Nagios format. 
 
 Usage.
-
+```sh
 Usage: check_ave.py -d DB -u USER -H HOST -P PORT -p PWD -M MINUTES
 
 Options:
@@ -13,4 +13,4 @@ Options:
   -P P        PG Port [default: 5555]
   -p P        PG Password [default: viewuser1]
   -M M        Minutes to query [default: 5 Minutes(s)]
-
+```
