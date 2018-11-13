@@ -21,7 +21,7 @@ nag_ret_dict = {'NagOk': 0,
                 'NagUnknown': 3}
 
 """ COMMAND LINE OPTION PARSING """
-usage = "USAGE: %prog -d DB -u USER -H HOST -P PORT -p PWD -C CLI -M MINUTES"
+usage = "USAGE: %prog -d DB -u USER -H HOST -P PORT -p PWD -M MINUTES"
 parser = optparse.OptionParser(usage=usage)
 parser.add_option('-d', action="store", default="mcdb", help="Avamar PG Database [default: %default]", type="string")
 parser.add_option('-u', action="store", default="viewuser", help="PG User [default: %default]", type="string")
