@@ -34,7 +34,7 @@ options, args = parser.parse_args()
 """ ARG COUNT CHECK """
 if len(sys.argv[1:]) == 0:
     parser.print_help()
-    sys.exit(nag_ret_dict['NagCrit'])
+    sys.exit(nag_ret_dict['NagUnknown'])
 
 """ TEST DATABASE CONNECTION """
 try:
@@ -42,7 +42,8 @@ try:
     % (options.d, options.u, options.H, options.p, options.P))
 except psycopg2.DatabaseError, e:
     print e
-    sys.exit(nag_ret_dict['NagCrit'])
+    sys.exit(nag_ret_dict['NagUnknown'])
+
 
 """ GET FAILURES """
 def count_failures_min():
@@ -77,7 +78,8 @@ def count_failures_min():
     except psycopg2.DatabaseError, e:
         print ( 'Error %s' % e )
         parser.print_help()
-        sys.exit(nag_ret_dict['nagiCrit'])
+        sys.exit(nag_ret_dict['NagUnknown'])
+
 
 """ MAIN FUNCTION """
 def main():
